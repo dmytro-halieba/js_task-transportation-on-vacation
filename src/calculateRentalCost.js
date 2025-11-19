@@ -4,16 +4,21 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
-  let total = days * 40;
+  const pricePerDay = 40; // dolars$
+  const longTerm = 7; // days
+  const longTermDiscount = 50; // dolars$
+  const shortTerm = 3; // days
+  const shortTermDiscount = 20; // dolars$
+  let total = days * pricePerDay;
 
   switch (true) {
-    case days >= 7:
-      total -= 50;
+    case days >= longTerm:
+      total -= longTermDiscount;
 
       return total;
 
-    case days >= 3:
-      total -= 20;
+    case days >= shortTerm:
+      total -= shortTermDiscount;
 
       return total;
 
